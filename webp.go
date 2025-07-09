@@ -161,3 +161,50 @@ func GetMetadata(data []byte, format string) (metadata []byte, err error) {
 func SetMetadata(data, metadata []byte, format string) (newData []byte, err error) {
 	return webpSetMetadata(data, metadata, format)
 }
+
+// AnimInfo contains animation information
+type AnimInfo struct {
+	CanvasWidth  int
+	CanvasHeight int
+	FrameCount   int
+	LoopCount    int
+}
+
+// Frame represents a single frame in an animation
+type Frame struct {
+	Image     *image.RGBA
+	Timestamp int
+	Duration  int
+}
+
+// IsAnimated checks if the WebP data contains an animation
+func IsAnimated(data []byte) bool {
+	return webpIsAnimated(data)
+}
+
+// GetAnimInfo returns animation information
+func GetAnimInfo(data []byte) (*AnimInfo, error) {
+	return webpGetAnimInfo(data)
+}
+
+// DecodeAnimFirstFrame decodes the first frame of an animated WebP
+func DecodeAnimFirstFrame(data []byte) (*image.RGBA, error) {
+	return webpDecodeAnimFirstFrame(data)
+}
+
+// DecodeAnimFrames decodes all frames of an animated WebP
+func DecodeAnimFrames(data []byte) ([]*Frame, error) {
+	return webpDecodeAnimFrames(data)
+}
+
+// ConvertAnimToStatic converts an animated WebP to a static WebP (first frame)
+func ConvertAnimToStatic(data []byte) ([]byte, error) {
+	// 解码第一帧
+	firstFrame, err := DecodeAnimFirstFrame(data)
+	if err != nil {
+		return nil, err
+	}
+	
+	// 编码为静态 WebP
+	return EncodeRGBA(firstFrame, 80.0)
+}
