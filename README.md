@@ -11,10 +11,10 @@ webp
 ```
 
 
-[![Build Status](https://github.com/chai2010/webp/actions/workflows/test.yml/badge.svg)](https://github.com/chai2010/webp/actions/workflows/test.yml)
-[![GoDoc](https://godoc.org/github.com/chai2010/webp?status.svg)](https://pkg.go.dev/github.com/chai2010/webp)
-[![GitHub release](https://img.shields.io/github/v/tag/chai2010/webp.svg?label=release)](https://github.com/chai2010/webp/releases)
-[![license](https://img.shields.io/github/license/chai2010/webp.svg)](https://github.com/chai2010/webp/blob/master/LICENSE)
+[![Build Status](https://github.com/jageros/webp/actions/workflows/test.yml/badge.svg)](https://github.com/jageros/webp/actions/workflows/test.yml)
+[![GoDoc](https://godoc.org/github.com/jageros/webp?status.svg)](https://pkg.go.dev/github.com/jageros/webp)
+[![GitHub release](https://img.shields.io/github/v/tag/chai2010/webp.svg?label=release)](https://github.com/jageros/webp/releases)
+[![license](https://img.shields.io/github/license/chai2010/webp.svg)](https://github.com/jageros/webp/blob/master/LICENSE)
 
 Benchmark
 =========
@@ -28,7 +28,7 @@ Install
 Install `GCC` or `MinGW` ([download here](http://tdm-gcc.tdragon.net/download)) at first,
 and then run these commands:
 
-1. `go get github.com/chai2010/webp`
+1. `go get github.com/jageros/webp`
 2. `go run hello.go`
 
 
@@ -46,7 +46,7 @@ import (
 	"io/ioutil"
 	"log"
 
-	"github.com/chai2010/webp"
+	"github.com/jageros/webp"
 )
 
 func main() {
